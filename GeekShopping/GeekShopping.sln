@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5FAE1ECB-37C0-4DFB-8AD6-AE87C30E90C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.ProductAPI", "GeekShopping.ProductAPI\GeekShopping.ProductAPI.csproj", "{BF20731B-2B7A-4E15-8CFC-70E6C1841132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.ProductAPI", "GeekShopping.ProductAPI\GeekShopping.ProductAPI.csproj", "{BF20731B-2B7A-4E15-8CFC-70E6C1841132}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.IdentityServer", "GeekShopping.IdentityServer\GeekShopping.IdentityServer.csproj", "{BACE3719-30EA-4CA7-A42A-2F0E1B1F8ADE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{BF20731B-2B7A-4E15-8CFC-70E6C1841132}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF20731B-2B7A-4E15-8CFC-70E6C1841132}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF20731B-2B7A-4E15-8CFC-70E6C1841132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BACE3719-30EA-4CA7-A42A-2F0E1B1F8ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BACE3719-30EA-4CA7-A42A-2F0E1B1F8ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BACE3719-30EA-4CA7-A42A-2F0E1B1F8ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BACE3719-30EA-4CA7-A42A-2F0E1B1F8ADE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BF20731B-2B7A-4E15-8CFC-70E6C1841132} = {5FAE1ECB-37C0-4DFB-8AD6-AE87C30E90C8}
+		{BACE3719-30EA-4CA7-A42A-2F0E1B1F8ADE} = {5FAE1ECB-37C0-4DFB-8AD6-AE87C30E90C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC67645B-2148-4290-B32A-FC47557C67D7}

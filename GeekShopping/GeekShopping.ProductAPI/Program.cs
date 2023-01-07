@@ -25,8 +25,27 @@ builder.Services.AddSwaggerGen(c =>
 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Api Shopping" });
 });
 
-var connection = builder.Configuration["teste"];
+var connection = builder.Configuration["connection"];
 builder.Services.AddDbContext<SqlContext>(options => options.UseSqlServer(connection));
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder
+//#if DEBUG
+                    .AllowAnyOrigin()
+//#else
+
+//                    .WithOrigins("https://*.shopmoura.com.br")
+//#endif
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .SetIsOriginAllowedToAllowWildcardSubdomains()
+        .SetPreflightMaxAge(TimeSpan.FromSeconds(600))
+        .Build();
+    });
+});
 
 var app = builder.Build();
 
@@ -36,6 +55,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 

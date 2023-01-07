@@ -19,6 +19,4 @@ namespace GeekShopping.ProductAPI.Implementation.Model.Context
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
         }
     }
-
-    
 }
