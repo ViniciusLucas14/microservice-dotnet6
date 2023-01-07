@@ -1,5 +1,7 @@
 ﻿using GeekShopping.ProductAPI.Domain.IRepository;
 using GeekShopping.ProductAPI.Domain.VM;
+using GeekShopping.ProductAPI.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,7 +32,7 @@ namespace GeekShopping.ProductAPI.Controllers
             var products = await _repository.FindAll();
             return Ok(products);
         }
-
+        [Authorize(Roles = Role.Admin)]
         [HttpPost]
         public async Task<ActionResult> Create(ProductVM vm)
         {
@@ -38,7 +40,7 @@ namespace GeekShopping.ProductAPI.Controllers
             var product = await _repository.Create(vm);
             return Ok(product);
         }
-
+        [Authorize(Roles = Role.Admin)]
         [HttpPut]
         public async Task<ActionResult> Update(ProductVM vm)
         {
@@ -46,7 +48,7 @@ namespace GeekShopping.ProductAPI.Controllers
             var product = await _repository.Update(vm);
             return Ok(product);
         }
-
+        [Authorize(Roles = Role.Admin)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
